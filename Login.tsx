@@ -25,7 +25,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
         classes
     });
 
-    const { social, realm, url, usernameHidden, login, auth, registrationDisabled } = kcContext;
+    const { social, realm, url, usernameHidden, login, auth, registrationDisabled, message, isAppInitiatedAction } = kcContext;
 
     const pathLogoImg = `${url.resourcesPath}/img/sulogo.svg`
     const pathUserImg = `url(${url.resourcesPath}/img/person.png)`
@@ -215,6 +215,25 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     )}
                                 </div>
                                     </div>*/}
+
+                        {message !== undefined && (message.type !== "warning" || !isAppInitiatedAction) && (
+                            <div className={clsx("alert", `alert-${message.type}`)}>
+                                {message.type === "success" && <span className={getClassName("kcFeedbackSuccessIcon")}></span>}
+                                {message.type === "warning" && <span className={getClassName("kcFeedbackWarningIcon")}></span>}
+                                {message.type === "error" && <span className={getClassName("kcFeedbackErrorIcon")}></span>}
+                                {message.type === "info" && <span className={getClassName("kcFeedbackInfoIcon")}></span>}
+                                <span
+                                    className="kc-feedback-text"
+                                    dangerouslySetInnerHTML={{
+                                        "__html": "Login failed, please try again."
+                                    }}
+                                />
+                            </div>
+                        )}
+
+
+
+
                             <div className="col  s12">
                             <div className="col m1 l4 hide-on-small-only">
 		&nbsp;
