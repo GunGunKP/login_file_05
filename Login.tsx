@@ -229,7 +229,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     }}
                                 />
                             </div>*/
-                            <h1 style={{color: "red"}}>Login failed, please try again.</h1>
+                            <p style={{color: "red",fontSize: "0.5rem"}}>Login failed, please try again.</p>
                         )}
 
 
