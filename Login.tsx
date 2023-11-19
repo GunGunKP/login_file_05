@@ -217,7 +217,7 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                     </div>*/}
 
                         {message !== undefined && (message.type !== "warning" || !isAppInitiatedAction) && (
-                            <div className={clsx("alert", `alert-${message.type}`)}>
+                            /*<div className={clsx("alert", `alert-${message.type}`)}>
                                 {message.type === "success" && <span className={getClassName("kcFeedbackSuccessIcon")}></span>}
                                 {message.type === "warning" && <span className={getClassName("kcFeedbackWarningIcon")}></span>}
                                 {message.type === "error" && <span className={getClassName("kcFeedbackErrorIcon")}></span>}
@@ -228,7 +228,8 @@ export default function Login(props: PageProps<Extract<KcContext, { pageId: "log
                                         "__html": "Login failed, please try again."
                                     }}
                                 />
-                            </div>
+                            </div>*/
+                            <h1 style={{color: "red"}}>Login failed, please try again.</h1>
                         )}
 
 
